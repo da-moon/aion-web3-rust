@@ -1,0 +1,10 @@
+[package]
+name = "aion-web3-rust"
+version = "0.1.0"
+authors = ["Damoon"]
+
+[dependencies]
+rust-crypto = "^0.2"
+
+#rug = "1.2.1"
+
