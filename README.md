@@ -24,9 +24,9 @@ Aion Web3 functions in rust
 
 ## utlis.js
 
-- [ ] padLeft
-- [ ] padRight
-- [ ] toUtf8
+- [x] ~~padLeft~~
+- [x] ~~padRight~~
+- [x] ~~toUtf8~~
 - [ ] toAscii
 - [ ] fromUtf8
 - [ ] fromAscii

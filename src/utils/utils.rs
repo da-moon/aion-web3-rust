@@ -42,8 +42,5 @@ pub fn to_utf8(input : String) -> String{
                 i += 2;
             };
     };
-   
     result
 }
-// u8::from_str_radix("A", 16), Ok(10)
-//          n as char
