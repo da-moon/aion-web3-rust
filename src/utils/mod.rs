@@ -1,2 +1,3 @@
 pub mod sha3;
-pub mod test;
+pub mod sha3_test;
+pub mod utils;

@@ -1,29 +1,19 @@
+use crypto::digest::Digest;
+use crypto::sha3::Sha3;
 #[derive(Debug)]
-pub struct Options {
-    pub encoding: &'static str,
+pub struct Options <'a>  {
+    pub encoding: &'a str,
 }
-
-pub fn hash(value: &str , option: Options ) -> &str{
-    let mut result: &str = value; 
-    if option.encoding == "hex"{
-         if value.len() > 2 &&  &value[0..2] == "0x" {
-            result = &value[2..value.len()]  ;      
+impl<'a> Options<'a> {
+    pub fn hash(&self,value: &'a str  ) -> String{
+        let mut result :  &'a str  = value; 
+        let mut hasher = Sha3::sha3_256();
+        if self.encoding == "hex"{
+            if value.len() > 2 &&  &value[0..2] == "0x" {
+                result = &value[2..value.len()]  ;      
+            };
         };
-    };
-    result
+        hasher.input_str(result);
+        hasher.result_str()
+    }
 }
-
-
-
-// module.exports = function (value, options) {
-//     if (options && options.encoding === 'hex') {
-//         if (value.length > 2 && value.substr(0, 2) === '0x') {
-//             value = value.substr(2);
-//         }
-//         value = CryptoJS.enc.Hex.parse(value);
-//     }
-
-//     return sha3(value, {
-//         outputLength: 256
-//     }).toString();
-// };

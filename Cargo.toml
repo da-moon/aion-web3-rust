@@ -4,7 +4,6 @@ version = "0.1.0"
 authors = ["Damoon"]
 
 [dependencies]
-rust-crypto = "^0.2"
-
+rust-crypto-wasm = "0.3.1"
 #rug = "1.2.1"
 
