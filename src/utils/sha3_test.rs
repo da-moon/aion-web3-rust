@@ -4,6 +4,7 @@ pub mod sha3_test {
     use utils::sha3;
 
     #[test]
+    #[ignore]
     fn sha3_hash() {
         let option = sha3::Options{
             encoding:"hex",
