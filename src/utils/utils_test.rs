@@ -5,75 +5,118 @@ pub mod utils_test {
     #[test]
     #[ignore]
     fn pad_left_no_char() {
-        let case = "000123456".to_string();
-        let result = utils::pad_left("123456".to_string(),3,String::new());
-        assert_eq!(case, result);
+        let result = "000123456".to_string();
+        let input = utils::pad_left("123456".to_string(),3,String::new());
+        assert_eq!(result, input);
 
     }
     #[test]
     #[ignore]
     fn pad_left() {
-        let case = "xx123456".to_string();
-        let result = utils::pad_left("123456".to_string(),2,"x".to_string());
-        assert_eq!(case, result);
+        let result = "xx123456".to_string();
+        let input = utils::pad_left("123456".to_string(),2,"x".to_string());
+        assert_eq!(result, input);
 
     }
     #[test]
     #[ignore]
     fn pad_right() {
-        let case = "123456xx".to_string();
-        let result = utils::pad_right("123456".to_string(),2,"x".to_string());
-        assert_eq!(case, result);
+        let result = "123456xx".to_string();
+        let input = utils::pad_right("123456".to_string(),2,"x".to_string());
+        assert_eq!(result, input);
 
     }
     #[test]
     #[ignore]
     fn pad_right_no_char() {
-        let case = "123456000".to_string();
-        let result = utils::pad_right("123456".to_string(),3,String::new());
-        assert_eq!(case, result);
+        let result = "123456000".to_string();
+        let input = utils::pad_right("123456".to_string(),3,String::new());
+        assert_eq!(result, input);
 
     }
     #[test]
     #[ignore]
+    fn to_ascii(){
+        let result = "JKL".to_string();
+        let input = utils::to_ascii("4a4b4c".to_string());
+        assert_eq!(result, input);
+    }
+    #[test]
+    #[ignore]
+    fn to_ascii_alt(){
+        let result = "J".to_string();
+        let input = utils::to_ascii("4aF".to_string());
+        assert_eq!(result, input);
+    }
+    #[test]
+    #[ignore]
+    fn to_ascii_with_0x(){
+        let result = "JKL".to_string();
+        let input = utils::to_ascii("0x4a4b4c".to_string());
+        assert_eq!(result, input);
+    }
+    #[test]
+    #[ignore]
+    fn to_ascii_odd_len(){
+        let result = "JK".to_string();
+        let input = utils::to_ascii("0x4a4b4".to_string());
+        assert_eq!(result, input);
+    }
+    #[test]
+    #[ignore]
+   fn to_ascii_empty(){
+        let result =String::new();
+        let input = utils::to_ascii(String::new());
+        assert_eq!(result, input);
+    }
+    #[test]    
+    #[ignore]
+    fn to_ascii_smaller_than_2_len(){
+        let result = String::new();
+        let input = utils::to_ascii("1".to_string());
+        assert_eq!(result, input);
+    }
+    #[test]
+    #[ignore]
     fn to_utf8(){
-        let case = "JKL".to_string();
-        let result = utils::to_utf8("4a4b4c".to_string());
-        assert_eq!(case, result);
+        let result = "JKL".to_string();
+        let input = utils::to_utf8("4a4b4c".to_string());
+        assert_eq!(result, input);
     }
     #[test]
     #[ignore]
     fn to_utf8_alt(){
-        let case = "J".to_string();
-        let result = utils::to_utf8("4aF".to_string());
-        assert_eq!(case, result);
+        let result = "Hello world!".to_string();
+        let input = utils::to_utf8("48656c6c6f20776f726c6421".to_string());
+        assert_eq!(result, input);
     }
     #[test]
     #[ignore]
     fn to_utf8_with_0x(){
-        let case = "JKL".to_string();
-        let result = utils::to_utf8("0x4a4b4c".to_string());
-        assert_eq!(case, result);
+        let result = "JKL".to_string();
+        let input = utils::to_utf8("0x4a4b4c".to_string());
+        assert_eq!(result, input);
     }
     #[test]
     #[ignore]
     fn to_utf8_odd_len(){
-        let case = "JK".to_string();
-        let result = utils::to_utf8("0x4a4b4".to_string());
-        assert_eq!(case, result);
+        let result = "JK".to_string();
+        let input = utils::to_utf8("0x4a4b4".to_string());
+        assert_eq!(result, input);
     }
     #[test]
     #[ignore]
-   fn to_utf8_empty(){
-        let case =String::new();
-        let result = utils::to_utf8(String::new());
-        assert_eq!(case, result);
+    fn to_utf8_empty(){
+        let result =String::new();
+        let input = utils::to_utf8(String::new());
+        assert_eq!(result, input);
     }
-    #[test]    
+    #[test]   
     #[ignore]
     fn to_utf8_smaller_than_2_len(){
-        let case = String::new();
-        let result = utils::to_utf8("1".to_string());
-        assert_eq!(case, result);
+        let result = String::new();
+        let input = utils::to_utf8("1".to_string());
+        assert_eq!(result, input);
     }
+    
 }
