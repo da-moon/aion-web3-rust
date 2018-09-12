@@ -1,5 +1,6 @@
 use std::str;
 use hex::decode;
+use hex::encode;
 
 pub fn pad_left(input : String,shift : usize , sign_bit : String) -> String{
     let mut result = input.clone();
@@ -24,12 +25,7 @@ pub fn pad_right(input : String,shift : usize , sign_bit : String) -> String{
     }
     result
 }
-
-// hex::decode("48656c6c6f20776f726c6421"),
-//     Ok("Hello world!".to_owned().into_bytes())
-
 pub fn to_utf8(input : String) -> String{
-
     let mut result : String = String::new();
     let mut input_clone = input.clone();
     if input.len() >= 2 {          
@@ -47,8 +43,14 @@ pub fn to_utf8(input : String) -> String{
     };
     result
 }
-
-
+pub fn from_utf8(input : String) -> String{
+    let mut result : String = String::new();
+    let mut input_clone = input.clone();
+    let mut result_temp = encode(input_clone.as_str());
+    result_temp.insert_str(0,"0x");
+    result = result_temp.to_string();
+    result
+}
 pub fn to_ascii(input : String) -> String{
     let mut result : String = String::new();
     let mut input_clone = input.clone();
@@ -69,4 +71,14 @@ pub fn to_ascii(input : String) -> String{
             };
     };
     result
+}
+pub fn from_ascii(input : String) -> String{
+    let mut temp :String = String::new();
+    let result = input.encode_utf16();
+    let result = result.into_iter().for_each(|x| {
+            println!("{:?}",x.to_string());
+            temp.clone().insert_str(temp.clone().len(),x.to_string().as_str());
+
+        }
+    );
 }
