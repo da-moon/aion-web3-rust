@@ -72,13 +72,7 @@ pub fn to_ascii(input : String) -> String{
     result
 }
 pub fn from_ascii(input : String) -> String{
-    let mut result :String = String::new();
-    let input_encoded = input.encode_utf16();
-    input_encoded.into_iter().for_each(|x| {
-            let result_lenght = result.len();
-            result.insert_str(result_lenght,x.to_string().as_str());
-        }
-    );
+    let mut result = encode(input);
     result.insert_str(0,"0x");
     result
 }
