@@ -82,3 +82,17 @@ pub fn from_ascii(input : String) -> String{
     result.insert_str(0,"0x");
     result
 }
+pub fn to_decimal(input: String)->String{
+    let mut result :String = String::new();
+    let mut input_clone = input.clone();
+    if input.len() >= 2 {
+        if &input[0..2] == "0x" {
+            input_clone = (&input[2..input.len()]).to_string();
+        }
+        let temp = i64::from_str_radix(input_clone.as_str(), 16);
+        if temp.is_ok(){
+            result = temp.unwrap().to_string();
+        }
+    }
+    result
+}

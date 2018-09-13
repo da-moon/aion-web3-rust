@@ -33,7 +33,7 @@ Aion Web3 functions in rust
 - [ ] transformToFullName => Need AION Web3 library
 - [ ] extractDisplayName => Need AION Web3 library
 - [ ] extractTypeName => Need AION Web3 library
-- [ ] toDecimal => Use big number
+- [x] toDecimal => Use big number - add more tests
 - [ ] fromDecimal
 - [ ] toHex
 - [ ] getValueOfUnit
