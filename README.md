@@ -27,13 +27,13 @@ Aion Web3 functions in rust
 - [x] ~~padLeft~~
 - [x] ~~padRight~~
 - [x] ~~toUtf8~~
-- [ ] toAscii
-- [ ] fromUtf8
-- [ ] fromAscii
-- [ ] transformToFullName
-- [ ] extractDisplayName
-- [ ] extractTypeName
-- [ ] toDecimal
+- [x] toAscii
+- [x] fromUtf8
+- [x] fromAscii
+- [ ] transformToFullName => Need AION Web3 library
+- [ ] extractDisplayName => Need AION Web3 library
+- [ ] extractTypeName => Need AION Web3 library
+- [ ] toDecimal => Use big number
 - [ ] fromDecimal
 - [ ] toHex
 - [ ] getValueOfUnit

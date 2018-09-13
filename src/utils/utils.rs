@@ -44,11 +44,10 @@ pub fn to_utf8(input : String) -> String{
     result
 }
 pub fn from_utf8(input : String) -> String{
-    let mut result : String = String::new();
-    let mut input_clone = input.clone();
+    let input_clone = input.clone();
     let mut result_temp = encode(input_clone.as_str());
     result_temp.insert_str(0,"0x");
-    result = result_temp.to_string();
+    let result : String = result_temp.to_string();
     result
 }
 pub fn to_ascii(input : String) -> String{
@@ -73,12 +72,13 @@ pub fn to_ascii(input : String) -> String{
     result
 }
 pub fn from_ascii(input : String) -> String{
-    let mut temp :String = String::new();
-    let result = input.encode_utf16();
-    let result = result.into_iter().for_each(|x| {
-            println!("{:?}",x.to_string());
-            temp.clone().insert_str(temp.clone().len(),x.to_string().as_str());
-
+    let mut result :String = String::new();
+    let input_encoded = input.encode_utf16();
+    input_encoded.into_iter().for_each(|x| {
+            let result_lenght = result.len();
+            result.insert_str(result_lenght,x.to_string().as_str());
         }
     );
+    result.insert_str(0,"0x");
+    result
 }
