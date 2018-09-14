@@ -161,4 +161,39 @@ pub mod utils_test {
         let input = utils::to_decimal("0xea".to_string());
         assert_eq!(input, result);
     }
+    #[test]   
+    #[ignore]
+    fn to_big_number_pos_hex(){
+        let result = "15".to_string();
+        let input = utils::to_big_number("0xF".to_string());
+        assert_eq!(input, result);
+    }
+    #[test]  
+    #[ignore]
+    fn to_big_number_neg_hex(){
+        let result = "-15".to_string();
+        let input = utils::to_big_number("-0xF".to_string());
+        assert_eq!(input, result);
+    }
+    #[test]   
+    #[ignore]
+    fn to_big_number_pos_dec(){
+        let result = "15".to_string();
+        let input = utils::to_big_number("15".to_string());
+        assert_eq!(input, result);
+    }
+    #[test]   
+    #[ignore]
+    fn to_big_number_neg_dec(){
+        let result = "-15".to_string();
+        let input = utils::to_big_number("-15".to_string());
+        assert_eq!(input, result);
+    }
+    #[test]   
+    #[ignore]
+    fn to_big_number_no_0x_hex(){
+        let result = String::new();
+        let input = utils::to_big_number("F".to_string());
+        assert_eq!(input, result);
+    }
 }

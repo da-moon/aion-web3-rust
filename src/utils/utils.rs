@@ -1,7 +1,6 @@
 use std::str;
 use hex::decode;
 use hex::encode;
-
 pub fn pad_left(input : String,shift : usize , sign_bit : String) -> String{
     let mut result = input.clone();
     let mut padding : &str = &sign_bit;
@@ -90,3 +89,48 @@ pub fn to_decimal(input: String)->String{
     }
     result
 }
+pub fn to_big_number(input:String) -> String
+{
+    let mut result :String = String::new();
+    let mut input_clone = input.clone();
+    let mut hex : bool = false;
+    if input.len() >= 2 {
+        if &input[0..2] == "0x" {
+            input_clone = (&input[2..input.len()]).to_string();
+            hex = true;
+        }
+        if input.len() > 2{
+            if &input[0..3] == "-0x" {
+                input_clone = (&input[3..input.len()]).to_string();
+                input_clone.insert_str(0,"-");
+                hex = true;
+            }
+        }
+    }
+    if hex{
+        let temp = i64::from_str_radix(input_clone.as_str(), 16);
+        if temp.is_ok(){
+            result = temp.unwrap().to_string();
+        }
+    }else{
+        let temp = i64::from_str_radix(input_clone.as_str(), 10);
+        if temp.is_ok(){
+            result = temp.unwrap().to_string();
+        }
+    }
+
+    result
+    
+}
+
+
+// var toBigNumber = function(number) {
+//     /*jshint maxcomplexity:5 */
+//     number = number || 0;
+//     if (isBigNumber(number))
+//         return number;
+//     if (isString(number) && (number.indexOf('0x') === 0 || number.indexOf('-0x') === 0)) {
+//         return new BigNumber(number.replace('0x',''), 16);
+//     }
+//     return new BigNumber(number.toString(10), 10);
+// };

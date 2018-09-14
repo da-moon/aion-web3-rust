@@ -27,19 +27,19 @@ Aion Web3 functions in rust
 - [x] ~~padLeft~~
 - [x] ~~padRight~~
 - [x] ~~toUtf8~~
-- [x] toAscii
-- [x] fromUtf8
-- [x] fromAscii
+- [x] ~~toAscii~~
+- [x] ~~fromUtf8~~
+- [x] ~~fromAscii~~
 - [ ] transformToFullName => Need AION Web3 library
 - [ ] extractDisplayName => Need AION Web3 library
 - [ ] extractTypeName => Need AION Web3 library
 - [x] toDecimal => Use big number - add more tests
-- [ ] fromDecimal
-- [ ] toHex
-- [ ] getValueOfUnit
-- [ ] fromWei
-- [ ] toWei
-- [ ] toBigNumber
+- [x] ~~fromDecimal~~
+- [ ] toHex => depends on big number 
+- [ ] getValueOfUnit => depends on big number
+- [ ] fromWei => Add consts
+- [ ] toWei => Add consts
+- [x] toBigNumber => depends on big number -- ~~check value for string input~~ -- 
 - [ ] toTwosComplement
 - [ ] isStrictAddress
 - [ ] isAddress
