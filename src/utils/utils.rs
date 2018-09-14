@@ -1,6 +1,8 @@
 use std::str;
 use hex::decode;
 use hex::encode;
+use regex::Regex;
+
 pub fn pad_left(input : String,shift : usize , sign_bit : String) -> String{
     let mut result = input.clone();
     let mut padding : &str = &sign_bit;
@@ -122,7 +124,11 @@ pub fn to_big_number(input:String) -> String
     result
     
 }
-
+pub fn is_strict_address(address : String)->bool{
+    let regex = Regex::new(r"^0x[0-9a-f]{64}$").unwrap();
+    let result = regex.is_match(address.as_str());
+    result
+}
 
 // var toBigNumber = function(number) {
 //     /*jshint maxcomplexity:5 */

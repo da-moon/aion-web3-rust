@@ -196,4 +196,18 @@ pub mod utils_test {
         let input = utils::to_big_number("F".to_string());
         assert_eq!(input, result);
     }
+    #[test]   
+    #[ignore]
+    fn is_strict_address_success(){
+        let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+        let result = true;
+        assert_eq!(utils::is_strict_address(input), result);
+    }  
+    #[test]
+    #[ignore]
+    fn is_strict_address_fail(){
+        let input = "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe".to_string();
+        let result = false;
+        assert_eq!(utils::is_strict_address(input), result);
+    }
 }

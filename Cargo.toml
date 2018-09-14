@@ -6,6 +6,8 @@ authors = ["Damoon"]
 [dependencies]
 rust-crypto-wasm = "0.3.1"
 hex = "0.3.2"
+regex = "1"
+
 # uint = "0.4.1"
 #rug = "1.2.1"
 

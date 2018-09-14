@@ -1,5 +1,4 @@
 pub mod methods;
-
 // struct Foo {
 //     a: u8,
 //     b: u32,

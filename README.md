@@ -41,7 +41,7 @@ Aion Web3 functions in rust
 - [ ] toWei => Add consts
 - [x] toBigNumber => depends on big number -- ~~check value for string input~~ -- 
 - [ ] toTwosComplement
-- [ ] isStrictAddress
+- [x] isStrictAddress
 - [ ] isAddress
 - [ ] isChecksumAddress
 - [ ] toChecksumAddress
@@ -55,3 +55,9 @@ Aion Web3 functions in rust
 - [ ] isJson
 - [ ] isBloom
 - [ ] isTopic
+ 
+# web3
+
+## requestmanager.js
+
+- [x] Struct
