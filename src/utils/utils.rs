@@ -187,7 +187,6 @@ pub fn is_address(address : String)->bool{
     } else if regex_two.is_match(address.as_str()) || regex_three.is_match(address.as_str()){
         true
     }else{
-        println!("\n\ngoing for is checksum\n\n");
         is_checksum_address(address)
     }
 }
