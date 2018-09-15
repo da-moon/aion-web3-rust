@@ -69,7 +69,7 @@ Aion Web3 functions in rust
 ## formatters.js
 
 - [x] inputAddressFormatter => Add more tests
-- [ ] isPredefinedBlockNumber
+- [x] ~~isPredefinedBlockNumber~~
 - [ ] inputBlockNumberFormatter
 - [ ] inputDefaultBlockNumberFormatter
 
