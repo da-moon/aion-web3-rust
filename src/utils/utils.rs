@@ -126,7 +126,7 @@ pub fn to_big_number(input:String) -> String
     
 }
 pub fn is_strict_address(address : String)->bool{
-    let regex = Regex::new(r"^0x[0-9a-f]{64}$").unwrap();
+    let regex = Regex::new(r"/^0x[0-9a-f]{64}$/i").unwrap();
     let result = regex.is_match(address.as_str());
     result
 }
@@ -177,4 +177,16 @@ pub fn to_checksum_address(address:String)->String{
         i += 1;
     };
     result 
+}
+pub fn is_address(address : String)->bool{
+    let regex_one = Regex::new(r"!/^(0x)?[0-9a-f]{64}$/i").unwrap();
+    let regex_two = Regex::new(r"/^(0x)?[0-9a-f]{64}$/").unwrap();
+    let regex_three = Regex::new(r"/^(0x)?[0-9A-F]{64}$/").unwrap();
+    if regex_one.is_match(address.as_str()){
+        false
+    } else if (regex_one.is_match(address.as_str()) || regex_three.is_match(address.as_str())){
+        true
+    }else{
+        is_checksum_address(address)
+    }
 }
