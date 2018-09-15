@@ -131,20 +131,22 @@ pub fn is_strict_address(address : String)->bool{
     result
 }
 pub fn is_checksum_address(address : String)->bool{
-    let mut result:bool = false;
+    let mut result:bool = true;
     let hash = sha3::hash(address.to_lowercase());
     println!("{:?}",hash);
-    // let mut i = 0 ; 
-    // while i<=hash.len()-1 {
-    // let temp = i64::from_str_radix(&hash[i..i+1], 16);
-    // if temp.is_ok(){
-    //     let temp = temp.unwrap();
-    //     println!("{:?}",temp);
-    // }
-     
-    // i += 1;
-    // };
-    false
+    let mut i = 0 ; 
+    while i<=hash.len()-1 {
+        let temp = i64::from_str_radix(&hash[i..i+1], 16);
+        if temp.is_ok(){
+            let temp = temp.unwrap();
+            if (temp > 7 &&  hash[i..i+1].to_uppercase() != hash[i..i+1])||(temp <= 7 &&  hash[i..i+1].to_lowercase() != hash[i..i+1]){
+                result = false;
+            }
+            // println!("{:?}",temp);
+        }
+        i += 1;
+    };
+    result
 }
 //   if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
 //             return false;

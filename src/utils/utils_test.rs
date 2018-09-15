@@ -210,12 +210,17 @@ pub mod utils_test {
     //     let result = false;
     //     assert_eq!(utils::is_strict_address(input), result);
     // }
-    // #[test]
-    // fn is_checksum_address(){
-    //     // let input = "0XA00983F07C11EE9160A64DD3BA3DC3D1F88332A2869F25725F56CBD0BE32EF7A".to_string();
-    //     let input = "A".to_string();
-    //     let result = true;
-    //     let temp = utils::is_checksum_address(input);
+    #[test]
+    fn is_checksum_address(){
+        let input = "0XA00983F07C11EE9160A64DD3BA3DC3D1F88332A2869F25725F56CBD0BE32EF7A".to_string();
+        let result = true;
+        assert_eq!(utils::is_checksum_address(input), result);
+    }
+    #[test]
+     fn is_checksum_address_fail(){
+        let input = "0XA00983F07C11EE9160A64DD3BA3DC3D1F88332A2869F25725F56CBD0BE32EF7A".to_string();
+        let result = true;
+        assert_eq!(utils::is_checksum_address(input), result);
         
-    // }
+    }
 }
