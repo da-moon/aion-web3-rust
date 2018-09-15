@@ -139,7 +139,6 @@ pub fn is_checksum_address(address : String)->bool{
         }   
     } 
     let hash = sha3::hash(address_clone.to_lowercase());
-    println!("{:?}",hash);
     let mut i = 0 ; 
     while i<=hash.len()-1 {
         let temp = i64::from_str_radix(&hash[i..i+1], 16);
@@ -153,6 +152,29 @@ pub fn is_checksum_address(address : String)->bool{
     };
     result
 }
-// pub fn to_checksum_address(address:String)->String{
-
-// }
+pub fn to_checksum_address(address:String)->String{
+    let mut result:String = "0x".to_string();
+    let mut address:String = address.to_lowercase();
+    if address.len() >= 2 {
+        if &address[0..2] == "0x" {
+            address = (&address[2..address.len()]).to_string();
+        }   
+    }
+    let hash : String = sha3::hash(address.clone());
+    let mut i = 0 ; 
+    let address_clone = address.clone();
+    while i<=hash.len()-1 {
+        let temp = i64::from_str_radix(&hash[i..i+1], 16);
+        if temp.is_ok(){
+            let temp = temp.unwrap();
+            let index =result.len();
+            if temp>7{
+                result.insert_str(index,address_clone[i..i+1].to_uppercase().as_str());
+            }else{
+                result.insert_str(index,&address_clone[i..i+1]);
+            }
+        }
+        i += 1;
+    };
+    result 
+}
