@@ -20,4 +20,21 @@ pub fn is_predefined_blocknumber (blocknumber : &str)->bool{
     blocknumber == "latest" || blocknumber == "pending" || blocknumber == "earliest"
 }
 
-
+// var inputBlockNumberFormatter = function (blockNumber) {
+//     if (blockNumber === undefined) {
+//         return undefined;
+//     } else if (isPredefinedBlockNumber(blockNumber)) {
+//         return blockNumber;
+//     }
+//     return utils.toHex(blockNumber);
+// };
+pub fn input_blocknumber_formatter (blocknumber : String)->String {
+    let mut result: String =   blocknumber.clone();
+    if blocknumber == "undefined".to_string() {
+        "undefined".to_string()
+    }else if is_predefined_blocknumber(blocknumber.as_str()){
+        blocknumber
+    }else{
+        blocknumber
+    }
+}

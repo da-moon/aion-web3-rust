@@ -36,6 +36,7 @@ Aion Web3 functions in rust
 - [x] toDecimal => Use big number - add more tests
 - [x] ~~fromDecimal~~
 - [ ] toHex => depends on big number 
+    - [ ] to_hex_string
 - [ ] getValueOfUnit => depends on big number
 - [ ] fromWei => Add consts
 - [ ] toWei => Add consts
