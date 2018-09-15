@@ -5,7 +5,7 @@ Aion Web3 functions in rust
 
 ## sha3.js
 
-- [x] ~~sha3~~
+- [x] sha3 => GO over again and streamline
 
 ## config.js	
 

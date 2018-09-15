@@ -17,3 +17,12 @@ impl<'a> Options<'a> {
         hasher.result_str()
     }
 }
+pub fn hash(address: String  ) -> String{
+    let mut result :  &str  = address.as_str(); 
+    let mut hasher = Sha3::keccak256();
+    if address.len() > 2 &&  &address[0..2] == "0x" {
+        result = &address[2..address.len()]  ;      
+    };
+    hasher.input_str(result);
+    hasher.result_str().to_string()
+}

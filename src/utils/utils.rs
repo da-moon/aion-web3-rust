@@ -2,6 +2,7 @@ use std::str;
 use hex::decode;
 use hex::encode;
 use regex::Regex;
+use super::sha3;
 
 pub fn pad_left(input : String,shift : usize , sign_bit : String) -> String{
     let mut result = input.clone();
@@ -129,14 +130,22 @@ pub fn is_strict_address(address : String)->bool{
     let result = regex.is_match(address.as_str());
     result
 }
-
-// var toBigNumber = function(number) {
-//     /*jshint maxcomplexity:5 */
-//     number = number || 0;
-//     if (isBigNumber(number))
-//         return number;
-//     if (isString(number) && (number.indexOf('0x') === 0 || number.indexOf('-0x') === 0)) {
-//         return new BigNumber(number.replace('0x',''), 16);
-//     }
-//     return new BigNumber(number.toString(10), 10);
-// };
+pub fn is_checksum_address(address : String)->bool{
+    let mut result:bool = false;
+    let hash = sha3::hash(address.to_lowercase());
+    println!("{:?}",hash);
+    // let mut i = 0 ; 
+    // while i<=hash.len()-1 {
+    // let temp = i64::from_str_radix(&hash[i..i+1], 16);
+    // if temp.is_ok(){
+    //     let temp = temp.unwrap();
+    //     println!("{:?}",temp);
+    // }
+     
+    // i += 1;
+    // };
+    false
+}
+//   if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
+//             return false;
+//         }
