@@ -1,4 +1,6 @@
-pub mod methods;
+pub mod formatters;
+pub mod formatters_test;
+
 // struct Foo {
 //     a: u8,
 //     b: u32,

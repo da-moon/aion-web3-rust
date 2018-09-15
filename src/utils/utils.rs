@@ -184,9 +184,10 @@ pub fn is_address(address : String)->bool{
     let regex_three = Regex::new(r"/^(0x)?[0-9A-F]{64}$/").unwrap();
     if regex_one.is_match(address.as_str()){
         false
-    } else if (regex_one.is_match(address.as_str()) || regex_three.is_match(address.as_str())){
+    } else if regex_two.is_match(address.as_str()) || regex_three.is_match(address.as_str()){
         true
     }else{
+        println!("\n\ngoing for is checksum\n\n");
         is_checksum_address(address)
     }
 }

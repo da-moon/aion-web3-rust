@@ -61,3 +61,7 @@ Aion Web3 functions in rust
 ## requestmanager.js
 
 - [x] Struct
+
+## formatters.js
+
+- [x] inputAddressFormatter => Add more tests
