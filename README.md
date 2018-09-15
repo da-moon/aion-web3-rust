@@ -55,7 +55,11 @@ Aion Web3 functions in rust
 - [ ] isJson
 - [ ] isBloom
 - [ ] isTopic
- 
+
+## config.js
+
+- [x] export => deal with bignumber.
+
 # web3
 
 ## requestmanager.js
@@ -65,3 +69,7 @@ Aion Web3 functions in rust
 ## formatters.js
 
 - [x] inputAddressFormatter => Add more tests
+- [ ] isPredefinedBlockNumber
+- [ ] inputBlockNumberFormatter
+- [ ] inputDefaultBlockNumberFormatter
+
