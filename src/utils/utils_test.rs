@@ -211,13 +211,13 @@ pub mod utils_test {
     //     let input = utils::to_big_number("F".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]
+    #[test]
     // #[ignore]
-    // fn is_strict_address_success(){
-    //     let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
-    //     let result = true;
-    //     assert_eq!(utils::is_strict_address(input), result);
-    // }
+    fn is_strict_address_success(){
+        let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+        let result = true;
+        assert_eq!(utils::is_strict_address(input), result);
+    }
     // #[test]
     // #[ignore]
     // fn is_strict_address_fail(){
@@ -261,32 +261,57 @@ pub mod utils_test {
     //     let result = false;
     //     assert_eq!(utils::is_address(input), result);
     // }
-    #[test]
-    #[ignore]
-    fn to_hex_bool() {
-        let input = true;
-        let result = "test".to_string();
-        assert_eq!(bool::to_hex(input), result);
-    }
-    #[test]
-    #[ignore]
-    fn to_hex_bool_string_positive_number() {
-        let input = "0x17".to_string();
-        let result = "0x17".to_string();
-        assert_eq!(String::to_hex(input), result);
-    }
-    #[test]
-    #[ignore]
-    fn to_hex_bool_string_negative_number() {
-        let input = "-0x11".to_string();
-        let result = "-0x11".to_string();
-        assert_eq!(String::to_hex(input), result);
-    }
-    #[test]
-    #[ignore]
-    fn to_hex_string_not_number() {
-        let input = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".to_string();
-        let result = "0x5468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73".to_string();
-        assert_eq!(String::to_hex(input), result);
-    }
+    // #[test]
+    // #[ignore]
+    // fn to_hex_bool_true() {
+    //     let input = true;
+    //     let result = "0x1".to_string();
+    //     assert_eq!(bool::to_hex(input), result);
+    // }
+    // #[test]
+    // #[ignore]
+    // fn to_hex_bool_false() {
+    //     let input = false;
+    //     let result = "0x0".to_string();
+    //     assert_eq!(bool::to_hex(input), result);
+    // }
+    // #[test]
+    // #[ignore]
+    // fn to_hex_bool_string_positive_number() {
+    //     let input = "0x17".to_string();
+    //     let result = "0x17".to_string();
+    //     assert_eq!(String::to_hex(input), result);
+    // }
+    // #[test]
+    // #[ignore]
+    // fn to_hex_bool_string_negative_number() {
+    //     let input = "-0x11".to_string();
+    //     let result = "-0x11".to_string();
+    //     assert_eq!(String::to_hex(input), result);
+    // }
+    // #[test]
+    // #[ignore]
+    // fn to_hex_string_not_number() {
+    //     let input = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".to_string();
+    //     let result = "0x5468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73".to_string();
+    //     assert_eq!(String::to_hex(input), result);
+    // }
+    // #[test]
+    // fn to_address_strict() {
+    //     let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+    //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+    //     assert_eq!(utils::to_address(input), result);
+    //
+    // }
+    // #[test]
+    // fn to_address_without_0x() {
+    //     let input = "a00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+    //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+    //     assert_eq!(utils::to_address(input), result);    }
+    // #[test]
+    // fn to_address() {
+    //     let input = "Ia0BlMST7qstNhxdsuaX".to_string();
+    //     let result = "0x000000000000000000000000496130426c4d5354377173744e68786473756158".to_string();
+    //     assert_eq!(utils::to_address(input), result);
+    //     }
 }

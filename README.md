@@ -45,7 +45,9 @@ Aion Web3 functions in rust
 - [ ] toHex
 
   - [x] ~~String~~
-  - [ ] bool
+  - [x] ~~bool~~
+  - [ ] object
+  - [ ] big number
 
 - [ ] getValueOfUnit => depends on big number
 
@@ -60,9 +62,13 @@ Aion Web3 functions in rust
 - [x] isStrictAddress
 
 - [ ] isAddress
+
 - [ ] isChecksumAddress
+
 - [ ] toChecksumAddress
+
 - [ ] toAddress
+
 - [ ] isBigNumber
 - [ ] isString
 - [ ] isFunction

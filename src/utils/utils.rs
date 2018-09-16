@@ -220,12 +220,17 @@ pub trait ToHex<T> {
 }
 impl ToHex<bool> for bool {
      fn to_hex(input:bool)->String{
-        "test".to_string()
+        if input{
+            "0x1".to_string()
+        }else{
+            "0x0".to_string()
+        }
     }
 }
 impl ToHex<String> for String {
      fn to_hex(input:String)->String{
          let mut result : String = String::new();
+
          if input.len() > 2{
              if &input[0..3] == "-0x" {
                 result = from_decimal(input);
@@ -237,4 +242,23 @@ impl ToHex<String> for String {
          }
          result
     }
+}
+
+pub fn to_address(input: String)->String{
+    let mut result : String = String::new();
+    let regex = Regex::new(r"/^[0-9a-f]{64}$/").unwrap();
+    println!("\n\n{:?}\n\n", is_strict_address(input.clone()));
+    if is_strict_address(input.clone()) {
+        result = input.clone();
+    } else if regex.is_match(input.as_str()){
+        result = input.clone();
+        result.insert_str(0,"0x");
+    }else{
+        result = "0x".to_string();
+        let hex_input = String::to_hex(input.clone());
+        let hex_input = (&hex_input[2..hex_input.len()]).to_string();
+        let result_padded = pad_left(hex_input,64,"0".to_string());
+        result.insert_str(2,result_padded.as_str());
+    }
+    result
 }
