@@ -162,18 +162,20 @@ pub mod utils_test {
     //     let input = utils::to_decimal("0xea".to_string());
     //     assert_eq!(input, result);
     // }
-    #[test]
-    fn from_decimal_positive() {
-        let input = "16".to_string();
-        let result = "0x10".to_string();
-        assert_eq!(utils::from_decimal(input),result);
-    }
-    #[test]
-    fn from_decimal_negative() {
-        let input = "-11".to_string();
-        let result = "-0xb".to_string();
-        assert_eq!(utils::from_decimal(input),result);
-    }
+    // #[test]
+    // #[ignore]
+    // fn from_decimal_positive() {
+    //     let input = "16".to_string();
+    //     let result = "0x10".to_string();
+    //     assert_eq!(utils::from_decimal(input),result);
+    // }
+    // #[test]
+    // #[ignore]
+    // fn from_decimal_negative() {
+    //     let input = "-11".to_string();
+    //     let result = "-0xb".to_string();
+    //     assert_eq!(utils::from_decimal(input),result);
+    // }
     // #[test]
     // #[ignore]
     // fn to_big_number_pos_hex(){
@@ -260,9 +262,31 @@ pub mod utils_test {
     //     assert_eq!(utils::is_address(input), result);
     // }
     #[test]
+    #[ignore]
     fn to_hex_bool() {
         let input = true;
         let result = "test".to_string();
         assert_eq!(bool::to_hex(input), result);
+    }
+    #[test]
+    #[ignore]
+    fn to_hex_bool_string_positive_number() {
+        let input = "0x17".to_string();
+        let result = "0x17".to_string();
+        assert_eq!(String::to_hex(input), result);
+    }
+    #[test]
+    #[ignore]
+    fn to_hex_bool_string_negative_number() {
+        let input = "-0x11".to_string();
+        let result = "-0x11".to_string();
+        assert_eq!(String::to_hex(input), result);
+    }
+    #[test]
+    #[ignore]
+    fn to_hex_string_not_number() {
+        let input = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".to_string();
+        let result = "0x5468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73".to_string();
+        assert_eq!(String::to_hex(input), result);
     }
 }

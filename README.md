@@ -42,7 +42,10 @@ Aion Web3 functions in rust
 - [ ] extractTypeName => Need AION Web3 library
 - [x] toDecimal => Use big number - add more tests
 
-  - [ ] to_hex_string
+- [ ] toHex
+
+  - [x] ~~String~~
+  - [ ] bool
 
 - [ ] getValueOfUnit => depends on big number
 
@@ -55,6 +58,7 @@ Aion Web3 functions in rust
 - [ ] toTwosComplement
 
 - [x] isStrictAddress
+
 - [ ] isAddress
 - [ ] isChecksumAddress
 - [ ] toChecksumAddress

@@ -115,58 +115,6 @@ pub fn from_decimal(input:String)->String{
     }
 result
 }
-// #[derive(Debug)]
-// struct Radix {
-//     x: i64,
-//     radix: u32,
-// }
-//
-// impl Radix {
-//     fn new(x: i64, radix: u32) -> Result<Self, &'static str> {
-//         if radix < 2 || radix > 36 {
-//             Err("Unnsupported radix")
-//         } else {
-//             Ok(Self { x, radix })
-//         }
-//     }
-// }
-//
-//
-// impl fmt::Display for Radix {
-//     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-//         let mut x = self.x;
-//         // Good for binary formatting of `u128`s
-//         let mut result = ['\0'; 128];
-//         let mut used = 0;
-//         let negative = x < 0;
-//         if negative {
-//             x*=-1;
-//         }
-//         let mut x = x as u32;
-//         loop {
-//             let m = x % self.radix;
-//             x /= self.radix;
-//
-//             result[used] = char::from_digit(m, self.radix).unwrap();
-//             used += 1;
-//
-//             if x == 0 {
-//                 break;
-//             }
-//         }
-//
-//         if negative {
-//             write!(f, "-")?;
-//         }
-//
-//         for c in result[..used].iter().rev() {
-//             write!(f, "{}", c)?;
-//         }
-//
-//         Ok(())
-//     }
-// }
-
 pub fn to_big_number(input:String) -> String
 {
     let mut result :String = String::new();
@@ -277,7 +225,16 @@ impl ToHex<bool> for bool {
 }
 impl ToHex<String> for String {
      fn to_hex(input:String)->String{
-
-        "test".to_string()
+         let mut result : String = String::new();
+         if input.len() > 2{
+             if &input[0..3] == "-0x" {
+                result = from_decimal(input);
+            }else if &input[0..2] == "0x"{
+                result = input;
+            }else{
+                result = from_ascii(input);
+            }
+         }
+         result
     }
 }
