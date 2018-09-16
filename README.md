@@ -74,6 +74,7 @@ Aion Web3 functions in rust
 - [ ] isString
 
 - [ ] isFunction
+
 - [ ] isObject
 - [ ] isBoolean
 - [ ] isArray
@@ -96,4 +97,9 @@ Aion Web3 functions in rust
 - [x] inputAddressFormatter => Add more tests
 - [x] ~~isPredefinedBlockNumber~~
 - [x] ~~inputBlockNumberFormatter~~
-- [ ] inputDefaultBlockNumberFormatter
+- [x] ~~inputDefaultBlockNumberFormatter~~
+- [ ] outputBigNumberFormatter
+
+  - [x] String
+
+- [ ]

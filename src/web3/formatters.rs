@@ -35,12 +35,7 @@ pub fn input_blocknumber_formatter (blocknumber : String)->String {
     }
     result
 }
-// var inputDefaultBlockNumberFormatter = function (blockNumber) {
-//     if (blockNumber === undefined) {
-//         return config.defaultBlock;
-//     }
-//     return inputBlockNumberFormatter(blockNumber);
-// };
+
 pub fn input_default_blocknumber_formatter(blocknumber: String)->String{
     let mut result : String = String::new();
     if blocknumber.clone() ==  "undefined".to_string(){
@@ -49,4 +44,7 @@ pub fn input_default_blocknumber_formatter(blocknumber: String)->String{
         result = input_blocknumber_formatter(blocknumber)
     }
     result
+}
+pub fn output_bignumber_formatter(number : String)->String{
+    utils::to_big_number(number)
 }

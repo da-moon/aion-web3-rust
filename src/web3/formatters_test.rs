@@ -9,7 +9,6 @@ pub mod formatters_test {
         let result : String = "0xA00983F07C11eE9160a64dd3bA3dc3D1F88332A2869f25725F56Cbd0Be32EF7a".to_string();
         assert_eq!(formatters::input_address_formatter(input),result );
     }
-
     // #[test]
     // #[ignore]
     // fn is_predefined_blocknumber_one(){
@@ -76,4 +75,11 @@ pub mod formatters_test {
     //     let result = "latest".to_string();
     //     assert_eq!(formatters::input_default_blocknumber_formatter(input),result );
     // }
+    // #[test]
+    // #[ignore]
+    // fn output_bignumber_formatter() {
+    //         let result = "-15".to_string();
+    //         let input = formatters::output_bignumber_formatter("-0xF".to_string());
+    //         assert_eq!(input, result);
+  }
 }
