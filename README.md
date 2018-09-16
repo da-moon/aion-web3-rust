@@ -42,7 +42,7 @@ Aion Web3 functions in rust
 - [ ] extractTypeName => Need AION Web3 library
 - [x] toDecimal => Use big number - add more tests
 
-- [ ] toHex
+- [x] toHex
 
   - [x] ~~String~~
   - [x] ~~bool~~
@@ -70,7 +70,9 @@ Aion Web3 functions in rust
 - [ ] toAddress
 
 - [ ] isBigNumber
+
 - [ ] isString
+
 - [ ] isFunction
 - [ ] isObject
 - [ ] isBoolean
@@ -93,5 +95,5 @@ Aion Web3 functions in rust
 
 - [x] inputAddressFormatter => Add more tests
 - [x] ~~isPredefinedBlockNumber~~
-- [ ] inputBlockNumberFormatter
+- [x] ~~inputBlockNumberFormatter~~
 - [ ] inputDefaultBlockNumberFormatter

@@ -3,14 +3,14 @@
 pub mod utils_test {
     use utils::utils;
     use utils::utils::ToHex;
-    // #[test]
-    // #[ignore]
-    // fn pad_left_no_char() {
-    //     let input = utils::pad_left("123456".to_string(),3,String::new());
-    //     let result = "000123456".to_string();
-    //     assert_eq!(result, input);
-    //
-    // }
+    #[test]
+    #[ignore]
+    fn pad_left_no_char() {
+        let input = utils::pad_left("123456".to_string(),3,String::new());
+        let result = "000123456".to_string();
+        assert_eq!(result, input);
+
+    }
     // #[test]
     // #[ignore]
     // fn pad_left() {
@@ -25,7 +25,7 @@ pub mod utils_test {
     //     let result = "123456xx".to_string();
     //     let input = utils::pad_right("123456".to_string(),2,"x".to_string());
     //     assert_eq!(result, input);
-
+    //
     // }
     // #[test]
     // #[ignore]
@@ -33,7 +33,7 @@ pub mod utils_test {
     //     let result = "123456000".to_string();
     //     let input = utils::pad_right("123456".to_string(),3,String::new());
     //     assert_eq!(result, input);
-
+    //
     // }
     // #[test]
     // #[ignore]
@@ -154,7 +154,7 @@ pub mod utils_test {
     //     let input = utils::from_ascii(String::new());
     //     assert_eq!(input, result);
     // }
-
+    //
     // #[test]
     // #[ignore]
     // fn to_decimal(){
@@ -238,7 +238,7 @@ pub mod utils_test {
     //     let input = "0xA00983F07C11eE9160a64dd3bA3dc3D1F88332A2869f25725F56Cbd0Be32EF7a".to_string();
     //     let result = true;
     //     assert_eq!(utils::is_checksum_address(input), result);
-
+    //
     // }
     // #[test]
     // #[ignore]
@@ -297,21 +297,26 @@ pub mod utils_test {
     //     assert_eq!(String::to_hex(input), result);
     // }
     // #[test]
+    // #[ignore]
     // fn to_address_strict() {
     //     let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     assert_eq!(utils::to_address(input), result);
     // }
     // #[test]
+    // #[ignore]
+    //
     // fn to_address_without_0x() {
     //     let input = "a00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     assert_eq!(utils::to_address(input), result);
     // }
-    #[test]
-    fn to_address() {
-        let input = "Ia0BlMST7qstNhxdsuaX".to_string();
-        let result = "0x000000000000000000000000496130426c4d5354377173744e68786473756158".to_string();
-        assert_eq!(utils::to_address(input), result);
-    }
+    // #[test]
+    // #[ignore]
+    //
+    // fn to_address() {
+    //     let input = "Ia0BlMST7qstNhxdsuaX".to_string();
+    //     let result = "0x000000000000000000000000496130426c4d5354377173744e68786473756158".to_string();
+    //     assert_eq!(utils::to_address(input), result);
+    // }
 }
