@@ -30,12 +30,12 @@ pub fn pad_right(input : String,shift : usize , sign_bit : String) -> String{
 pub fn to_utf8(input : String) -> String{
     let mut result : String = String::new();
     let mut input_clone = input.clone();
-    if input.len() >= 2 {          
+    if input.len() >= 2 {
             if &input[0..2] == "0x" {
-                input_clone = (&input[2..input.len()]).to_string();      
+                input_clone = (&input[2..input.len()]).to_string();
             }
             if input_clone.len()%2 == 1 {
-                input_clone = (&input_clone[0..input_clone.len()-1]).to_string();  
+                input_clone = (&input_clone[0..input_clone.len()-1]).to_string();
             }
                 let result_temp = decode(input_clone.as_str());
                 let result_temp = result_temp.ok();
@@ -55,14 +55,14 @@ pub fn from_utf8(input : String) -> String{
 pub fn to_ascii(input : String) -> String{
     let mut result : String = String::new();
     let mut input_clone = input.clone();
-    if input.len() >= 2 {          
+    if input.len() >= 2 {
             if &input[0..2] == "0x" {
-                input_clone = (&input[2..input.len()]).to_string();      
+                input_clone = (&input[2..input.len()]).to_string();
             }
             if input_clone.len()%2 == 1 {
-                input_clone = (&input_clone[0..input_clone.len()-1]).to_string();  
+                input_clone = (&input_clone[0..input_clone.len()-1]).to_string();
             }
-            let mut i = 0 ; 
+            let mut i = 0 ;
             while i<=input_clone.len()-2 {
                 let temp = u8::from_str_radix(&input_clone[i..i+2], 16).map(|n| n as char);
                 if temp.is_ok(){
@@ -123,7 +123,7 @@ pub fn to_big_number(input:String) -> String
     }
 
     result
-    
+
 }
 pub fn is_strict_address(address : String)->bool{
     let regex = Regex::new(r"/^0x[0-9a-f]{64}$/i").unwrap();
@@ -136,10 +136,10 @@ pub fn is_checksum_address(address : String)->bool{
     if address_clone.len() >= 2 {
         if &address_clone[0..2] == "0x" {
             address_clone = (&address[2..address.len()]).to_string();
-        }   
-    } 
+        }
+    }
     let hash = sha3::hash(address_clone.to_lowercase());
-    let mut i = 0 ; 
+    let mut i = 0 ;
     while i<=hash.len()-1 {
         let temp = i64::from_str_radix(&hash[i..i+1], 16);
         if temp.is_ok(){
@@ -158,10 +158,10 @@ pub fn to_checksum_address(address:String)->String{
     if address.len() >= 2 {
         if &address[0..2] == "0x" {
             address = (&address[2..address.len()]).to_string();
-        }   
+        }
     }
     let hash : String = sha3::hash(address.clone());
-    let mut i = 0 ; 
+    let mut i = 0 ;
     let address_clone = address.clone();
     while i<=hash.len()-1 {
         let temp = i64::from_str_radix(&hash[i..i+1], 16);
@@ -176,8 +176,9 @@ pub fn to_checksum_address(address:String)->String{
         }
         i += 1;
     };
-    result 
+    result
 }
+
 pub fn is_address(address : String)->bool{
     let regex_one = Regex::new(r"!/^(0x)?[0-9a-f]{64}$/i").unwrap();
     let regex_two = Regex::new(r"/^(0x)?[0-9a-f]{64}$/").unwrap();
@@ -188,5 +189,20 @@ pub fn is_address(address : String)->bool{
         true
     }else{
         is_checksum_address(address)
+    }
+}
+
+pub trait ToHex<T> {
+    fn to_hex(input:T)->String;
+}
+impl ToHex<bool> for bool {
+     fn to_hex(input:bool)->String{
+        "test".to_string()
+    }
+}
+impl ToHex<String> for String {
+     fn to_hex(input:String)->String{
+
+        "test".to_string()
     }
 }

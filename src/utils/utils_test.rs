@@ -2,6 +2,7 @@
 #[cfg(test)]
 pub mod utils_test {
     use utils::utils;
+    use utils::utils::ToHex;
     // #[test]
     // #[ignore]
     // fn pad_left_no_char() {
@@ -69,7 +70,7 @@ pub mod utils_test {
     //     let input = utils::to_ascii(String::new());
     //     assert_eq!(result, input);
     // }
-    // #[test]    
+    // #[test]
     // #[ignore]
     // fn to_ascii_smaller_than_2_len(){
     //     let result = String::new();
@@ -111,7 +112,7 @@ pub mod utils_test {
     //     let input = utils::to_utf8(String::new());
     //     assert_eq!(result, input);
     // }
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn to_utf8_smaller_than_2_len(){
     //     let result = String::new();
@@ -154,55 +155,55 @@ pub mod utils_test {
     //     assert_eq!(input, result);
     // }
 
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn to_decimal(){
     //     let result = "234".to_string();
     //     let input = utils::to_decimal("0xea".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn to_big_number_pos_hex(){
     //     let result = "15".to_string();
     //     let input = utils::to_big_number("0xF".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]  
+    // #[test]
     // #[ignore]
     // fn to_big_number_neg_hex(){
     //     let result = "-15".to_string();
     //     let input = utils::to_big_number("-0xF".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn to_big_number_pos_dec(){
     //     let result = "15".to_string();
     //     let input = utils::to_big_number("15".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn to_big_number_neg_dec(){
     //     let result = "-15".to_string();
     //     let input = utils::to_big_number("-15".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn to_big_number_no_0x_hex(){
     //     let result = String::new();
     //     let input = utils::to_big_number("F".to_string());
     //     assert_eq!(input, result);
     // }
-    // #[test]   
+    // #[test]
     // #[ignore]
     // fn is_strict_address_success(){
     //     let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     let result = true;
     //     assert_eq!(utils::is_strict_address(input), result);
-    // }  
+    // }
     // #[test]
     // #[ignore]
     // fn is_strict_address_fail(){
@@ -223,7 +224,7 @@ pub mod utils_test {
     //     let input = "0xA00983F07C11eE9160a64dd3bA3dc3D1F88332A2869f25725F56Cbd0Be32EF7a".to_string();
     //     let result = true;
     //     assert_eq!(utils::is_checksum_address(input), result);
-        
+
     // }
     // #[test]
     // #[ignore]
@@ -246,4 +247,10 @@ pub mod utils_test {
     //     let result = false;
     //     assert_eq!(utils::is_address(input), result);
     // }
+    #[test]
+    fn to_hex_bool() {
+        let input = true;
+        let result = "test".to_string();
+        assert_eq!(bool::to_hex(input), result);
+    }
 }

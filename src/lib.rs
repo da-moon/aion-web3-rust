@@ -5,6 +5,6 @@ extern crate regex;
 // extern crate uint
 pub mod utils;
 pub mod web3;
-struct Web3{
+// struct Web3{
     
-}
+// }

@@ -1,4 +1,5 @@
 # aion-web3-rust
+
 Aion Web3 functions in rust
 
 # utlis
@@ -7,15 +8,15 @@ Aion Web3 functions in rust
 
 - [x] sha3 => GO over again and streamline
 
-## config.js	
+## config.js 
 
 <!-- Should I add anything? -->
 
-## browser-bn.js
+ ## browser-bn.js 
 
 <!-- Figurte out how to write bignumber in rust -->
 
-## bloom.js
+ ## bloom.js
 
 - [ ] codePointToInt
 - [ ] testBytes
@@ -24,6 +25,8 @@ Aion Web3 functions in rust
 
 ## utlis.js
 
+- [ ] toHex => big number wip - 'object' equivalant in rust? - isFinite condition?
+- [ ] fromDecimal
 - [x] ~~padLeft~~
 - [x] ~~padRight~~
 - [x] ~~toUtf8~~
@@ -34,13 +37,15 @@ Aion Web3 functions in rust
 - [ ] extractDisplayName => Need AION Web3 library
 - [ ] extractTypeName => Need AION Web3 library
 - [x] toDecimal => Use big number - add more tests
-- [x] ~~fromDecimal~~
-- [ ] toHex => depends on big number 
-    - [ ] to_hex_string
+
+  - [ ] to_hex_string
+
 - [ ] getValueOfUnit => depends on big number
+
 - [ ] fromWei => Add consts
+
 - [ ] toWei => Add consts
-- [x] toBigNumber => depends on big number -- ~~check value for string input~~ -- 
+- [x] toBigNumber => depends on big number -- ~~check value for string input~~ --
 - [ ] toTwosComplement
 - [x] isStrictAddress
 - [ ] isAddress
@@ -73,4 +78,3 @@ Aion Web3 functions in rust
 - [x] ~~isPredefinedBlockNumber~~
 - [ ] inputBlockNumberFormatter
 - [ ] inputDefaultBlockNumberFormatter
-

@@ -1,4 +1,5 @@
 #[allow(non_camel_case_types)]
+#[allow(dead_code)]
 pub const ETH_UNITS : &'static [&'static str] = &["wei",
     "kwei",
     "Mwei",
@@ -29,6 +30,8 @@ pub const ETH_UNITS : &'static [&'static str] = &["wei",
 
 #[allow(non_camel_case_types)]
 #[allow(non_upper_case_globals)]
+#[allow(dead_code)]
+#[allow(non_snake_case)]
 pub struct Config {
     ETH_PADDING: u32,
     ETH_SIGNATURE_LENGTH: u32,
@@ -40,6 +43,9 @@ pub struct Config {
 
 }
 #[allow(non_upper_case_globals)]
+#[allow(non_snake_case)]
+#[allow(dead_code)]
+#[allow(unused_mut)]
 static mut config: Config = Config{
     ETH_PADDING: 32 ,
     ETH_SIGNATURE_LENGTH: 4,
