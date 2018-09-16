@@ -301,17 +301,17 @@ pub mod utils_test {
     //     let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     assert_eq!(utils::to_address(input), result);
-    //
     // }
     // #[test]
     // fn to_address_without_0x() {
     //     let input = "a00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
-    //     assert_eq!(utils::to_address(input), result);    }
+    //     assert_eq!(utils::to_address(input), result);
+    // }
     // #[test]
     // fn to_address() {
     //     let input = "Ia0BlMST7qstNhxdsuaX".to_string();
     //     let result = "0x000000000000000000000000496130426c4d5354377173744e68786473756158".to_string();
     //     assert_eq!(utils::to_address(input), result);
-    //     }
+    // }
 }

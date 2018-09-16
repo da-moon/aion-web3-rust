@@ -149,7 +149,7 @@ pub fn to_big_number(input:String) -> String
 
 }
 pub fn is_strict_address(address : String)->bool{
-    let regex = Regex::new(r"/^0x[0-9a-f]{64}$/i").unwrap();
+    let regex = Regex::new(r"(?i)(^0x[0-9a-f]{64}$)").unwrap();
     let result = regex.is_match(address.as_str());
     result
 }
@@ -203,9 +203,9 @@ pub fn to_checksum_address(address:String)->String{
 }
 
 pub fn is_address(address : String)->bool{
-    let regex_one = Regex::new(r"!/^(0x)?[0-9a-f]{64}$/i").unwrap();
-    let regex_two = Regex::new(r"/^(0x)?[0-9a-f]{64}$/").unwrap();
-    let regex_three = Regex::new(r"/^(0x)?[0-9A-F]{64}$/").unwrap();
+    let regex_one = Regex::new(r"(?i)(!^(0x)?[0-9a-f]{64}$)").unwrap();
+    let regex_two = Regex::new(r"^(0x)?[0-9a-f]{64}$").unwrap();
+    let regex_three = Regex::new(r"^(0x)?[0-9A-F]{64}$").unwrap();
     if regex_one.is_match(address.as_str()){
         false
     } else if regex_two.is_match(address.as_str()) || regex_three.is_match(address.as_str()){
@@ -246,8 +246,7 @@ impl ToHex<String> for String {
 
 pub fn to_address(input: String)->String{
     let mut result : String = String::new();
-    let regex = Regex::new(r"/^[0-9a-f]{64}$/").unwrap();
-    println!("\n\n{:?}\n\n", is_strict_address(input.clone()));
+    let regex = Regex::new(r"^[0-9a-f]{64}$").unwrap();
     if is_strict_address(input.clone()) {
         result = input.clone();
     } else if regex.is_match(input.as_str()){
