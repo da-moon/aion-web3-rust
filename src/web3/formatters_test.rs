@@ -38,29 +38,42 @@ pub mod formatters_test {
     //     let result = false;
     //     assert_eq!(formatters::is_predefined_blocknumber(input),result );
     // }
-    // The Times 03/Jan/2009 Chancellor on brink of second bailout for banks
-    #[test]
-    #[ignore]
-
-    fn input_blocknumber_formatter_undefined() {
-        let input = "undefined".to_string();
-        let result = "undefined".to_string();
-        assert_eq!(formatters::input_blocknumber_formatter(input),result );
-    }
-    #[test]
-    #[ignore]
-
-    fn input_blocknumber_formatter_predefined() {
-        let input = "pending".to_string();
-        let result = "pending".to_string();
-        assert_eq!(formatters::input_blocknumber_formatter(input),result );
-    }
-    #[test]
-    #[ignore]
-
-    fn input_blocknumber_formatter() {
-        let input = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".to_string();
-        let result = "0x5468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73".to_string();
-        assert_eq!(formatters::input_blocknumber_formatter(input),result );
-    }
+    // #[test]
+    // #[ignore]
+    //
+    // fn input_blocknumber_formatter_undefined() {
+    //     let input = "undefined".to_string();
+    //     let result = "undefined".to_string();
+    //     assert_eq!(formatters::input_blocknumber_formatter(input),result );
+    // }
+    // #[test]
+    // #[ignore]
+    //
+    // fn input_blocknumber_formatter_predefined() {
+    //     let input = "pending".to_string();
+    //     let result = "pending".to_string();
+    //     assert_eq!(formatters::input_blocknumber_formatter(input),result );
+    // }
+    // #[test]
+    // #[ignore]
+    //
+    // fn input_blocknumber_formatter() {
+    //     let input = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".to_string();
+    //     let result = "0x5468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73".to_string();
+    //     assert_eq!(formatters::input_blocknumber_formatter(input),result );
+    // }
+    // #[test]
+    // #[ignore]
+    // fn input_default_blocknumber_formatter() {
+    //     let input = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks".to_string();
+    //     let result = "0x5468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73".to_string();
+    //     assert_eq!(formatters::input_default_blocknumber_formatter(input),result );
+    //  }
+    // #[test]
+    // #[ignore]
+    // fn input_default_blocknumber_undefined() {
+    //     let input = "undefined".to_string();
+    //     let result = "latest".to_string();
+    //     assert_eq!(formatters::input_default_blocknumber_formatter(input),result );
+    // }
 }
