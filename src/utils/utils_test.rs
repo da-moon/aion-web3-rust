@@ -162,6 +162,18 @@ pub mod utils_test {
     //     let input = utils::to_decimal("0xea".to_string());
     //     assert_eq!(input, result);
     // }
+    #[test]
+    fn from_decimal_positive() {
+        let input = "16".to_string();
+        let result = "0x10".to_string();
+        assert_eq!(utils::from_decimal(input),result);
+    }
+    #[test]
+    fn from_decimal_negative() {
+        let input = "-11".to_string();
+        let result = "-0xb".to_string();
+        assert_eq!(utils::from_decimal(input),result);
+    }
     // #[test]
     // #[ignore]
     // fn to_big_number_pos_hex(){

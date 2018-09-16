@@ -2,6 +2,10 @@
 
 Aion Web3 functions in rust
 
+# general todo
+
+- [ ] use traits to rewrite methods with overloading whenever it is needed.
+
 # utlis
 
 ## sha3.js
@@ -26,7 +30,7 @@ Aion Web3 functions in rust
 ## utlis.js
 
 - [ ] toHex => big number wip - 'object' equivalant in rust? - isFinite condition?
-- [ ] fromDecimal
+- [x] fromDecimal => big number
 - [x] ~~padLeft~~
 - [x] ~~padRight~~
 - [x] ~~toUtf8~~
@@ -45,8 +49,11 @@ Aion Web3 functions in rust
 - [ ] fromWei => Add consts
 
 - [ ] toWei => Add consts
+
 - [x] toBigNumber => depends on big number -- ~~check value for string input~~ --
+
 - [ ] toTwosComplement
+
 - [x] isStrictAddress
 - [ ] isAddress
 - [ ] isChecksumAddress
