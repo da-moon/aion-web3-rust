@@ -6,10 +6,10 @@ pub mod utils_test {
     // #[test]
     // #[ignore]
     // fn pad_left_no_char() {
-    //     let result = "000123456".to_string();
     //     let input = utils::pad_left("123456".to_string(),3,String::new());
+    //     let result = "000123456".to_string();
     //     assert_eq!(result, input);
-
+    //
     // }
     // #[test]
     // #[ignore]
@@ -17,7 +17,7 @@ pub mod utils_test {
     //     let result = "xx123456".to_string();
     //     let input = utils::pad_left("123456".to_string(),2,"x".to_string());
     //     assert_eq!(result, input);
-
+    //
     // }
     // #[test]
     // #[ignore]
@@ -211,13 +211,13 @@ pub mod utils_test {
     //     let input = utils::to_big_number("F".to_string());
     //     assert_eq!(input, result);
     // }
-    #[test]
+    // #[test]
     // #[ignore]
-    fn is_strict_address_success(){
-        let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
-        let result = true;
-        assert_eq!(utils::is_strict_address(input), result);
-    }
+    // fn is_strict_address_success(){
+    //     let input = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
+    //     let result = true;
+    //     assert_eq!(utils::is_strict_address(input), result);
+    // }
     // #[test]
     // #[ignore]
     // fn is_strict_address_fail(){
@@ -308,10 +308,10 @@ pub mod utils_test {
     //     let result = "0xa00983f07c11ee9160a64dd3ba3dc3d1f88332a2869f25725f56cbd0be32ef7a".to_string();
     //     assert_eq!(utils::to_address(input), result);
     // }
-    // #[test]
-    // fn to_address() {
-    //     let input = "Ia0BlMST7qstNhxdsuaX".to_string();
-    //     let result = "0x000000000000000000000000496130426c4d5354377173744e68786473756158".to_string();
-    //     assert_eq!(utils::to_address(input), result);
-    // }
+    #[test]
+    fn to_address() {
+        let input = "Ia0BlMST7qstNhxdsuaX".to_string();
+        let result = "0x000000000000000000000000496130426c4d5354377173744e68786473756158".to_string();
+        assert_eq!(utils::to_address(input), result);
+    }
 }

@@ -256,7 +256,8 @@ pub fn to_address(input: String)->String{
         result = "0x".to_string();
         let hex_input = String::to_hex(input.clone());
         let hex_input = (&hex_input[2..hex_input.len()]).to_string();
-        let result_padded = pad_left(hex_input,64,"0".to_string());
+        let hex_input_len = hex_input.len();
+        let result_padded = pad_left(hex_input,64-hex_input_len,"0".to_string());
         result.insert_str(2,result_padded.as_str());
     }
     result
